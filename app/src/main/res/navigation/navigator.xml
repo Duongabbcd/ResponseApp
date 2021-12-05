@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigator"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="gst.trainingcourse.responseapp.fragment.list.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list" >
+
+
+        <action
+            android:id="@+id/listToAddFragment"
+            app:destination="@+id/addFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/listToUpdateFragment"
+            app:destination="@+id/updateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="gst.trainingcourse.responseapp.fragment.add.AddFragment"
+        android:label="Add"
+        tools:layout="@layout/fragment_add"
+        >
+        <action
+            android:id="@+id/addToListFragment"
+            app:destination="@+id/listFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="gst.trainingcourse.responseapp.fragment.update.UpdateFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update">
+
+        <action
+            android:id="@+id/updateToListFragment"
+            app:destination="@+id/listFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+        <argument
+            android:name="currentSubject"
+            app:argType="gst.trainingcourse.responseapp.model.Subject"
+            />
+
+
+    </fragment>
+
+
+</navigation>
